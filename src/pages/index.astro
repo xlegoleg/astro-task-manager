@@ -1,0 +1,12 @@
+---
+import TaskList from '../components/TaskList.astro';
+import TaskForm from '../components/TaskForm.svelte';
+
+---
+<h1 class="text-3xl text-center mb-5">Task manager</h1>
+<section style="width: 100%;" class="flex justify-center">
+	<div style="width: 600px;" class="flex flex-col items-center justify-center">
+		<TaskForm client:load />
+		<TaskList />
+	</div>
+</section>

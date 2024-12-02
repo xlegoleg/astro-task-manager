@@ -1,0 +1,24 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "verbatimModuleSyntax": false,
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      },
+    ]
+  },
+  "exclude": [
+    "dist"
+  ]
+}

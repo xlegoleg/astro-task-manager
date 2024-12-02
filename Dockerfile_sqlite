@@ -1,0 +1,15 @@
+FROM node:20-alpine
+
+WORKDIR /db
+
+RUN npm install -g prisma
+RUN apk add --no-cache sqlite
+
+COPY prisma/migrations ./prisma/migrations
+COPY prisma/schema.prisma ./prisma/schema.prisma
+
+RUN npx prisma generate
+
+CMD ["sh", "-c", "npx prisma migrate deploy --schema=/db/prisma/schema.prisma && tail -f /dev/null"]
+
+EXPOSE 1234
